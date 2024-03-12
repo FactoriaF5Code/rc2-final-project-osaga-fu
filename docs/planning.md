@@ -17,3 +17,8 @@
 Sé el mejor auxiliar de cámara con todo lo necesario!
 
 Descarga la app y empieza a crear.
+
+
+## User Story Mapping y User Story Journey
+
+[Enlace al Mural](https://app.mural.co/t/lallamalaserstudio5568/m/lallamalaserstudio5568/1710260674048/eb32dc281964ad79c6b8ae3f7c0c13afd030d255?sender=u5254e35ee752a47fd5003532)
