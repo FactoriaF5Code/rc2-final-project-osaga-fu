@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "OcraExt";
+  src: local("OcraExt"),
+    url("./presentation/assets/fonts/OCRAEXT.TTF") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lekton";
+  src: local("Lekton"),
+    url("./presentation/assets/fonts/Lekton-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+:root {
+  --main-color: #FFE37E;
+  --secondary-color: ;
+
+  --title-font: "OcraExt";
+  --text-font: "Lekton" ;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-size: 62.5%;
+  font-family: var(--text-font), Arial, Helvetica, sans-serif;
+  border: none;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 7rem;
+}
