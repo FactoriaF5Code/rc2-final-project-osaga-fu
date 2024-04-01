@@ -1,8 +1,13 @@
-import "./Banner.css"
+import "./Banner.css";
 
 export default function Banner() {
-
   return (
-    <div>Banner</div>
-  )
+    <section className="banner-container">
+      <div className="banner-bg">
+        <h3 className="banner-text">
+          Design your own camera tags
+        </h3>
+      </div>
+    </section>
+  );
 }
