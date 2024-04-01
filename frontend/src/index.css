@@ -17,7 +17,7 @@
   --secondary-color: ;
 
   --title-font: "OcraExt";
-  --text-font: "Lekton" ;
+  --text-font: "Lekton";
 }
 
 * {
@@ -27,11 +27,11 @@
   text-decoration: none;
   list-style: none;
   font-size: 62.5%;
-  font-family: var(--text-font), Arial, Helvetica, sans-serif;
   border: none;
 }
 
 body {
   min-height: 100vh;
   font-size: 7rem;
+  font-family: var(--text-font), Arial, Helvetica, sans-serif;
 }

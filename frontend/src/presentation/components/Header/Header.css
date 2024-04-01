@@ -1,0 +1,34 @@
+header {
+  height: 20rem;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+
+.logo {
+  height: 15rem;
+  position: fixed;
+  padding-right: 55rem;
+  align-self: flex-start;
+}
+
+.text-container {
+  font-family: var(--title-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.7rem;
+}
+
+.title-text {
+  font-size: 6rem;
+  font-weight: 400;
+}
+
+.subtitle-text {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
