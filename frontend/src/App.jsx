@@ -1,12 +1,11 @@
 import './App.css'
+import AppRouter from './middleware/router/AppRouter'
 
 function App() {
   
 
   return (
-    <>
-      <h1>Hola</h1>
-    </>
+    <AppRouter />
   )
 }
 
