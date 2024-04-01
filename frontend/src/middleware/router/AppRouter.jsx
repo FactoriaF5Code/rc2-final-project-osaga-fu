@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductDetail from "../../presentation/components/ProductDetail/ProductDetail";
-import ProductList from "../../presentation/components/ProductList/ProductList";
+import Landing from "../../presentation/pages/Landing";
 import Home from "../../presentation/pages/Home";
 
 export default function AppRouter() {
@@ -8,7 +8,7 @@ export default function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}>
-          <Route path="" element={<ProductList />} />
+          <Route path="" element={<Landing />} />
           <Route path="products/:id" element={<ProductDetail />} />
         </Route>
       </Routes>
