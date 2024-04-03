@@ -4,14 +4,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 1.5rem;
+  padding: 0 20rem 1rem 0;
 }
 
 .logo {
   height: 15rem;
-  position: fixed;
-  padding-right: 55rem;
-  align-self: flex-start;
 }
 
 .text-container {
