@@ -1,4 +1,5 @@
 import "./ProductDetail.css";
+import { Link } from "react-router-dom";
 import Image from "../../assets/images/_DSC0148-1.jpg";
 
 export default function ProductDetail() {
@@ -16,7 +17,9 @@ export default function ProductDetail() {
             </p>
             <h4 className="detail-price">10€</h4>
           </span>
-          <button className="back-button">Back</button>
+          <Link to="/">
+            <button className="back-button">Back</button>
+          </Link>
         </aside>
       </section>
     </main>
