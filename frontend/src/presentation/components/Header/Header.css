@@ -1,5 +1,5 @@
 header {
-  height: 20rem;
+  height: 15rem;
   background-color: var(--main-color);
   display: flex;
   align-items: center;
@@ -8,7 +8,8 @@ header {
 }
 
 .logo {
-  height: 15rem;
+  height: 12rem;
+  cursor: pointer;
 }
 
 .text-container {
@@ -20,12 +21,12 @@ header {
 }
 
 .title-text {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 400;
 }
 
 .subtitle-text {
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 400;
 }

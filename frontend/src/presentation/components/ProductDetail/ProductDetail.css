@@ -1,0 +1,62 @@
+.detail-container {
+  padding: 5rem 20rem;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.photo-container {
+  width: 40rem;
+  height: 40rem;
+  overflow: hidden;
+  border-radius: 3rem;
+}
+
+.detail-photo {
+  width: 80rem;
+  transition: transform 2s 0.1s ease-in-out;
+}
+
+.detail-photo:hover {
+  transform: scale(1.2);
+}
+
+.detail-info {
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.text-title {
+  font-size: 3rem;
+}
+
+.text-description {
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.detail-price {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+.back-button {
+  font-size: 2rem;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  background-color: #000;
+  color: #fff;
+  width: 10rem;
+  height: 3.5rem;
+  border-radius: 3rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  cursor: pointer;
+}

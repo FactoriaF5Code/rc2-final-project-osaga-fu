@@ -35,6 +35,12 @@
 
 .product-image {
   height: 30rem;
+  transition: transform 2s 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.product-image:hover {
+  transform: scale(1.2);
 }
 
 .product-info {
