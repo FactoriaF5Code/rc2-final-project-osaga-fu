@@ -13,12 +13,12 @@
 }
 
 .detail-photo {
-  width: 80rem;
+  height: 40rem;
   transition: transform 2s 0.1s ease-in-out;
 }
 
 .detail-photo:hover {
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 .detail-info {
