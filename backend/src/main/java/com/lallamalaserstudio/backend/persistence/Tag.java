@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tags")
+@Table(name = "tags")
 public class Tag {
 
     @Id
@@ -17,14 +17,15 @@ public class Tag {
     private Double price;
     private String size;
     private String photoUrl;
-    
+    private String description;
 
-    public Tag(Long id, String name, Double price, String size, String photoUrl){
+    public Tag(Long id, String name, Double price, String size, String photoUrl, String description) {
         this.id = id;
-        this.name=name;
-        this.price=price;
-        this.size=size;
-        this.photoUrl=photoUrl;
+        this.name = name;
+        this.price = price;
+        this.size = size;
+        this.photoUrl = photoUrl;
+        this.description = description;
     }
 
     public Tag() {
@@ -69,5 +70,13 @@ public class Tag {
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
     }
-    
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }

@@ -10,8 +10,7 @@ export default function ProductDetail() {
 
   const { showProductById } = useContext(ProductContext);
 
-  useEffect(()=>{
-
+  useEffect(() => {
     const fetchProduct = async () => {
       const response = await showProductById(id);
       setProduct(response);
@@ -19,24 +18,26 @@ export default function ProductDetail() {
     };
 
     fetchProduct();
-  },[id]);
+  }, [id]);
 
   if (!product) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
     <main>
       <section className="detail-container">
         <div className="photo-container">
-          <img className="detail-photo" src={product.photoUrl} alt={product.name} />
+          <img
+            className="detail-photo"
+            src={product.photoUrl}
+            alt={product.name}
+          />
         </div>
         <aside className="detail-info">
           <span>
             <h3 className="text-title">{product.name}</h3>
-            <p className="text-description">
-              Custom your own focus star so you'll never lose it again.
-            </p>
+            <p className="text-description">{product.description}</p>
             <h4 className="detail-price">{product.price}€</h4>
           </span>
           <Link to="/">

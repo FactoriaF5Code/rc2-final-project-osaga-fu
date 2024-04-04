@@ -7,13 +7,15 @@ public class TagResponse {
     private String size;
     private Double price;
     private String photoUrl;
+    private String description;
 
-    public TagResponse(Long id, String name, String size, Double price, String photoUrl) {
+    public TagResponse(Long id, String name, String size, Double price, String photoUrl, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.size = size;
         this.photoUrl = photoUrl;
+        this.description = description;
     }
 
     public Long getId() {
@@ -34,5 +36,9 @@ public class TagResponse {
 
     public String getPhotoUrl() {
         return photoUrl;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

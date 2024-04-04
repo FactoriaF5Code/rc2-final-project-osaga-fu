@@ -12,6 +12,7 @@ Crea chivatos de cámara personalizados con tu diseño y recíbelos en casa.
 ```
 npm install
 npm intall react-router-dom
+npm install axios
 ```
 
 

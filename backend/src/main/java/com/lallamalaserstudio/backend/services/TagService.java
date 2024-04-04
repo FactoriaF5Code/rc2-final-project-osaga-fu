@@ -23,7 +23,7 @@ public class TagService {
 
         List<Tag> tagsInDatabase = tagRepository.findAll();
         for (Tag tag : tagsInDatabase) {
-            tags.add(new TagResponse(tag.getId(), tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl()));
+            tags.add(new TagResponse(tag.getId(), tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl(), tag.getDescription()));
         }
         return tags;
     }
@@ -34,7 +34,7 @@ public class TagService {
 
         if (optionalTag.isPresent()) {
             Tag tag = optionalTag.get();
-            return new TagResponse(tag.getId(), tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl());
+            return new TagResponse(tag.getId(), tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl(), tag.getDescription());
         }
         return null;
 
