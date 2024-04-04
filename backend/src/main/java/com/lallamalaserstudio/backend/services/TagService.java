@@ -22,7 +22,7 @@ public class TagService {
 
         List<Tag> tagsInDatabase = tagRepository.findAll();
         for (Tag tag : tagsInDatabase) {
-            tags.add(new TagResponse(tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl()));
+            tags.add(new TagResponse(tag.getId(),tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl()));
         }
 
         return tags;
