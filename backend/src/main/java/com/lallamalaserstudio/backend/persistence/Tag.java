@@ -16,12 +16,15 @@ public class Tag {
     private String name;
     private Double price;
     private String size;
+    private String photoUrl;
     
-    public Tag(Long id, String name, Double price, String size){
+
+    public Tag(Long id, String name, Double price, String size, String photoUrl){
         this.id = id;
         this.name=name;
         this.price=price;
         this.size=size;
+        this.photoUrl=photoUrl;
     }
 
     public Tag() {
@@ -59,5 +62,12 @@ public class Tag {
         this.size = size;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
     
 }
