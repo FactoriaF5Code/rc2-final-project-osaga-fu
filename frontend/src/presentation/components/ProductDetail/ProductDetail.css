@@ -59,9 +59,9 @@
   right: 0;
   padding: 0;
   cursor: pointer;
-  transition: transform .5s .1s ease-in-out;
+  transition: transform 0.5s 0.1s ease-in-out;
 }
 
-.back-button:hover{
-    transform: scale(1.1);
+.back-button:hover {
+  transform: scale(1.1);
 }
