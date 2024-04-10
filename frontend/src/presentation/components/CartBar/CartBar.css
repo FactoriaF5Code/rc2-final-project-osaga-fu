@@ -1,0 +1,12 @@
+.cart-bar {
+    height: 6.5rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding-left: 81rem;
+    justify-content: center;
+}
+
+.cart-logo {
+    width: 3rem;
+}

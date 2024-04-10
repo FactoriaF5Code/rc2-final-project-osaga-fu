@@ -11,12 +11,12 @@
   height: 100%;
   backdrop-filter: brightness(50%);
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
 .banner-text {
   font-size: 3.2rem;
   color: #fff;
-  padding-right: 25rem;
+  padding-left: 62rem;
 }
