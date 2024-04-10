@@ -91,3 +91,83 @@
 .loading {
   height: 70vh;
 }
+
+/* ---- MODAL STYLES ---- */
+
+.modal-container {
+  background-color: #00000071;
+  position: absolute;
+  top: 0rem;
+  width: 100%;
+  height: 134.4%;
+  display: flex;
+  justify-content: center;
+}
+.modal-content {
+  width: 70rem;
+  height: 50rem;
+  background-color: var(--main-color);
+  border-radius: 3rem;
+  padding: 1rem;
+  margin-top: 18rem;
+  position: relative;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 3rem 0 1.5rem 0;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-form label {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.custom-form input, .custom-form select, .custom-form option{
+  width: 30rem;
+  height: 3.5rem;
+  border-radius: 3rem;
+  background-color: #fff;
+  font-size: 1.6rem;
+  font-weight: 200;
+  padding: 0 1.5rem;
+}
+
+
+.modal-add-button {
+  width: 10rem;
+  height: 3.5rem;
+  border-radius: 5rem;
+  font-size: 2rem;
+  margin-top: 3rem;
+  color: #fff;
+  background-color: #000;
+  cursor:pointer;
+  transition: transform 0.5s 0.1s ease-in-out;
+}
+
+.modal-add-button:hover {
+  transform: scale(1.1);
+}
