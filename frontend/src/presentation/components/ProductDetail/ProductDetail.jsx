@@ -2,15 +2,16 @@ import "./ProductDetail.css";
 import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../../middleware/context/ProductContext";
-import Close from "../../assets/images/Close.png";
+
+import CustomModal from "../CustomModal/CustomModal";
 
 export default function ProductDetail() {
   const { id } = useParams();
 
   const [product, setProduct] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  
 
-  const { showProductById } = useContext(ProductContext);
+  const { showProductById, handleCustomButtonClick, showModal } = useContext(ProductContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -22,13 +23,7 @@ export default function ProductDetail() {
     fetchProduct();
   }, [id]);
 
-  function handleCustomButtonClick() {
-    setShowModal(true);
-  }
-
-  function closeModal() {
-    setShowModal(false);
-  }
+  
 
   if (!product) {
     return <div className="loading"></div>;
@@ -58,39 +53,7 @@ export default function ProductDetail() {
           </Link>
         </aside>
       </section>
-      {showModal && (
-        <div className="modal-container">
-          <div className="modal-content">
-            <img
-              className="close"
-              onClick={closeModal}
-              src={Close}
-              alt="Close icon"
-            />
-            <h4 className="modal-title">Custom your own tags</h4>
-            <form className="custom-form" action="" method="post">
-              <div className="input-container">
-                <label htmlFor="text">Text</label>
-                <input type="text" name="" id="" />
-              </div>
-              <div className="input-container">
-                <label htmlFor="color">Color</label>
-                <input type="text" name="" id="" />
-              </div>
-              <div className="input-container">
-                <label htmlFor="text">Typography</label>
-                <select type="typography" name="" id="">
-                  <option value="typo1">Typography 1</option>
-                  <option value="typo2">Typography 2</option>
-                  <option value="typo3">Typography 3</option>
-                  <option value="typo4">Typography 4</option>
-                </select>
-              </div>
-              <button className="modal-add-button">Add</button>
-            </form>
-          </div>
-        </div>
-      )}
+      {showModal && <CustomModal />}
     </main>
   );
 }

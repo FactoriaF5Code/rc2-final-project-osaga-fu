@@ -1,9 +1,11 @@
 import { ProductService } from "../../services/ProductService";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
+
+  const [showModal, setShowModal] = useState(false);
 
   const showProducts = async () => {
     const productService = new ProductService();
@@ -15,9 +17,22 @@ export const ProductProvider = ({ children }) => {
     return productService.showTagById(id);
   };
 
+  function handleCustomButtonClick() {
+    setShowModal(true);
+  }
+
+  function closeModal() {
+    setShowModal(false);
+  }
+
   const value = {
     showProducts,
     showProductById,
+    handleCustomButtonClick,
+    closeModal,
+    showModal,
+    setShowModal
+  
   };
 
   return (
