@@ -1,0 +1,35 @@
+footer {
+  background-color: var(--main-color);
+  padding: 1.5rem 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+hr {
+  border: 1px black solid;
+  margin: 2rem 0;
+  width: 75rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.footer-contact-container{
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+}
+
+.footer-contact-text {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.logo-footer{
+    width: 3rem;
+}
