@@ -40,6 +40,7 @@ export default function ProductDetail() {
             <p className="text-description">{product.description}</p>
             <h4 className="detail-price">{product.price}€</h4>
           </span>
+          <button className="custom-button">Custom</button>
           <Link to="/">
             <button className="back-button">Back</button>
           </Link>
