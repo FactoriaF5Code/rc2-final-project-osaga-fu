@@ -1,7 +1,7 @@
 import "./Footer.css";
-import Instagram from "../../assets/images/Instagram.png"
-import Whatsapp from "../../assets/images/Whatsapp.png"
-import Envelope from "../../assets/images/Envelope.png"
+import Instagram from "../../assets/images/Instagram.png";
+import Whatsapp from "../../assets/images/Whatsapp.png";
+import Envelope from "../../assets/images/Envelope.png";
 
 export default function Footer() {
   return (
@@ -13,15 +13,21 @@ export default function Footer() {
       <hr />
       <section className="footer-bottom">
         <div className="footer-contact-container">
-          <img className="logo-footer" src={Envelope} alt="Logo email" />
+          <a href="mailto:lallamalaserstudio@gmail.com" target="_blank">
+            <img className="logo-footer" src={Envelope} alt="Logo email" />
+          </a>
           <h5 className="footer-contact-text">lallamalaserstudio@gmail.com</h5>
         </div>
         <div className="footer-contact-container">
-          <img className="logo-footer" src={Whatsapp} alt="Logo whatsapp" />
+          <a href="tel:+34620992742" target="_blank">
+            <img className="logo-footer" src={Whatsapp} alt="Logo whatsapp" />
+          </a>
           <h5 className="footer-contact-text">+34 620 99 27 42</h5>
         </div>
         <div className="footer-contact-container">
-          <img className="logo-footer" src={Instagram} alt="Logo Instagram" />
+          <a href="http://instagram.com/lallama_laserstudio" target="_blank">
+            <img className="logo-footer" src={Instagram} alt="Logo Instagram" />
+          </a>
           <h5 className="footer-contact-text">lallama_laserstudio</h5>
         </div>
       </section>

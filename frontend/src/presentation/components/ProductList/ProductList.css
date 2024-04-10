@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   gap: 4rem;
-  padding: 4rem 20rem;
+  padding: 4rem 10rem;
 }
 
 .list-title {
@@ -17,6 +17,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 3rem 10rem;
+  width: 110rem;
 }
 
 .product-container {
