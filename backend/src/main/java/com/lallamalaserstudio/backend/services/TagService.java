@@ -3,6 +3,7 @@ package com.lallamalaserstudio.backend.services;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,29 +15,23 @@ import com.lallamalaserstudio.backend.persistence.TagRepository;
 @Service
 public class TagService {
 
-    @Autowired
-    private TagRepository tagRepository;
+    private final TagRepository tagRepository;
+
+    public TagService(@Autowired TagRepository tagRepository) {
+        this.tagRepository = tagRepository;
+    }
 
     public List<TagResponse> getAllTags() {
-
-        List<TagResponse> tags = new ArrayList<TagResponse>();
-
-        List<Tag> tagsInDatabase = tagRepository.findAll();
-        for (Tag tag : tagsInDatabase) {
-            tags.add(new TagResponse(tag.getId(), tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl(), tag.getDescription()));
-        }
-        return tags;
+        return tagRepository.findAll().stream()
+                .map(TagResponse::from)
+                .collect(Collectors.toList());
     }
 
     public TagResponse getTagById(Long id) {
 
-        Optional<Tag> optionalTag = tagRepository.findById(id);
-
-        if (optionalTag.isPresent()) {
-            Tag tag = optionalTag.get();
-            return new TagResponse(tag.getId(), tag.getName(), tag.getSize(), tag.getPrice(), tag.getPhotoUrl(), tag.getDescription());
-        }
-        return null;
+        return tagRepository.findById(id)
+                .map(TagResponse::from)
+                .orElse(null);
 
     }
 
