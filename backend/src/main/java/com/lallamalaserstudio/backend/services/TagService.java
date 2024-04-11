@@ -15,8 +15,11 @@ import com.lallamalaserstudio.backend.persistence.TagRepository;
 @Service
 public class TagService {
 
-    @Autowired
-    private TagRepository tagRepository;
+    private final TagRepository tagRepository;
+
+    public TagService(@Autowired TagRepository tagRepository) {
+        this.tagRepository = tagRepository;
+    }
 
     public List<TagResponse> getAllTags() {
         return tagRepository.findAll().stream()
