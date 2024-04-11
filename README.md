@@ -40,20 +40,15 @@ Crea chivatos de cámara personalizados con tu diseño y recíbelos en casa.
 En la carpeta frontend introduce los siguientes comandos:
 
 ```
+cd frontend 
 npm install
-npm intall react-router-dom
-npm install axios
-```
-
-Para lanzar el fronted:
-
-```
 npm run dev
 ```
 
 ### BACKEND 
 
-Para lanzar el backend:
+Para lanzar el backend necesitamos una base de datos PostgreSQL según
+la configuración de `src/main/resources/application.properties`. 
 
 ```
 ./mvnw spring:boot run

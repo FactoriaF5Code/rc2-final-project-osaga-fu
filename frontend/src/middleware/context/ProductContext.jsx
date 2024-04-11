@@ -6,6 +6,7 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
 
   const [showModal, setShowModal] = useState(false);
+  const [cartItems, setCartItems] = useState(0);
 
   const showProducts = async () => {
     const productService = new ProductService();
@@ -25,13 +26,21 @@ export const ProductProvider = ({ children }) => {
     setShowModal(false);
   }
 
+  const addToCart = () => {
+    setCartItems(cartItems+1);
+  }
+
+  const cartProducts = () => cartItems;
+
   const value = {
     showProducts,
     showProductById,
     handleCustomButtonClick,
     closeModal,
     showModal,
-    setShowModal
+    setShowModal,
+    addToCart,
+    cartProducts
   
   };
 
