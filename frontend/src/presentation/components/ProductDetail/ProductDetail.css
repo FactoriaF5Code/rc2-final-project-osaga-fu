@@ -1,15 +1,28 @@
+.detail-bg{
+  padding: 3rem 0 15rem 0;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 227, 126, 1) 0%,
+    rgba(0, 0, 0, 1) 97%
+  );
+}
+
 .detail-container {
-  padding: 9rem 20rem 15rem 20rem;
+  padding: 6rem 0;
   display: flex;
-  justify-content: center;
-  gap: 5rem;
+  justify-content: space-evenly;
+  background-color: #fff;
+  width: 105rem;
+  margin: 0 auto;
+  border-radius: 1rem;
 }
 
 .photo-container {
   width: 40rem;
   height: 40rem;
   overflow: hidden;
-  border-radius: 3rem;
+  border-radius: .7rem;
+  box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.151);
 }
 
 .detail-photo {
@@ -29,7 +42,8 @@
 }
 
 .text-title {
-  font-size: 3rem;
+  font-size: 5rem;
+  font-weight: 200;
 }
 
 .text-description {
@@ -53,7 +67,7 @@
   color: #fff;
   width: 10rem;
   height: 3.5rem;
-  border-radius: 3rem;
+  border-radius: .7rem;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -75,7 +89,7 @@
   border: solid 1px #000;
   width: 10rem;
   height: 3.5rem;
-  border-radius: 3rem;
+  border-radius: .7rem;
   cursor: pointer;
   position: absolute;
   bottom: 6rem;

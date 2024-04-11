@@ -16,7 +16,7 @@ export default function CustomModal() {
           src={Close}
           alt="Close icon"
         />
-        <h4 className="modal-title">Custom your own tags</h4>
+        <h4 className="modal-title">Custom your own tags!</h4>
         <form className="custom-form">
           <div className="input-container">
             <label htmlFor="text">Text</label>

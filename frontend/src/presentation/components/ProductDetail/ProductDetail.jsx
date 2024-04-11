@@ -30,7 +30,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <main>
+    <main className="detail-bg">
       <section className="detail-container">
         <div className="photo-container">
           <img

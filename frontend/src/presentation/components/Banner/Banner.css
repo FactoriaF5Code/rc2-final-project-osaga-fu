@@ -1,9 +1,9 @@
 .banner-container {
   background-color: var(--secondary-color);
-  height: 35rem;
+  height: 60vh;
   background-image: url("../../assets/images/_DSC0148-1.jpg");
   background-size: cover;
-  background-position: 0 -27vw;
+  background-position: center;
 }
 
 .banner-bg {
@@ -18,5 +18,6 @@
 .banner-text {
   font-size: 3.2rem;
   color: #fff;
-  padding-left: 62rem;
+  padding-left: 83rem;
+  padding-top: 19vh;
 }
