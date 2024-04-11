@@ -17,12 +17,15 @@
     padding: 1rem;
     margin-top: 18rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   
   .close {
     cursor: pointer;
-    position: absolute;
-    right: 1rem;
+    width: 40px;
+    align-self: flex-end;
   }
   
   .modal-title {
