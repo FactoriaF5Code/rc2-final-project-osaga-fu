@@ -1,15 +1,12 @@
 package com.lallamalaserstudio.backend.services;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lallamalaserstudio.backend.controllers.TagResponse;
-import com.lallamalaserstudio.backend.persistence.Tag;
 import com.lallamalaserstudio.backend.persistence.TagRepository;
 
 @Service
