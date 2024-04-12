@@ -1,10 +1,6 @@
 package com.lallamalaserstudio.backend.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tags")
@@ -19,13 +15,18 @@ public class Tag {
     private String photoUrl;
     private String description;
 
-    public Tag(Long id, String name, Double price, String size, String photoUrl, String description) {
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Cart cart;
+
+    public Tag(Long id, String name, Double price, String size, String photoUrl, String description, Cart cart) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.size = size;
         this.photoUrl = photoUrl;
         this.description = description;
+        this.cart = cart;
     }
 
     public Tag() {
@@ -79,4 +80,11 @@ public class Tag {
         this.description = description;
     }
 
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
 }
