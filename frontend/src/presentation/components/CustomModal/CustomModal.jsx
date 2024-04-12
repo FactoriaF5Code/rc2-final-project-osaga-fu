@@ -4,9 +4,7 @@ import { ProductContext } from "../../../middleware/context/ProductContext";
 import { useContext } from "react";
 
 export default function CustomModal() {
-
   const { closeModal, addToCart } = useContext(ProductContext);
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,18 +29,25 @@ export default function CustomModal() {
           </div>
           <div className="input-container">
             <label htmlFor="color">Color</label>
-            <input type="text" name="color" id="color" />
+            <select name="typography" id="typography">
+              <option value="red">Red</option>{" "}
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+              <option value="purple">Purple</option>
+            </select>
           </div>
           <div className="input-container">
             <label htmlFor="typography">Typography</label>
             <select name="typography" id="typography">
-              <option value="typo1">Typography 1</option>
-              <option value="typo2">Typography 2</option>
-              <option value="typo3">Typography 3</option>
-              <option value="typo4">Typography 4</option>
+              <option value="typo1">Arial</option>
+              <option value="typo2">Courier New</option>
+              <option value="typo3">Roboto</option>
+              <option value="typo4">Machine Type</option>
             </select>
           </div>
-          <button className="modal-add-button">Add</button>
+          <button onClick={handleSubmit} className="modal-add-button">
+            Add
+          </button>
         </form>
       </div>
     </div>

@@ -58,8 +58,11 @@
   background-color: #fff;
   font-size: 1.6rem;
   font-weight: 200;
+  font-family: monospace;
   padding: 0 1.5rem;
 }
+
+
 
 .modal-add-button {
   width: 10rem;
