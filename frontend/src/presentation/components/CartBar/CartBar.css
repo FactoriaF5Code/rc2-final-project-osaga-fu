@@ -1,12 +1,13 @@
 .cart-bar {
-    height: 6.5rem;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    padding-left: 124rem;
-    justify-content: center;
+  height: 6.5rem;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding-left: 124rem;
+  justify-content: center;
 }
 
 .cart-logo {
-    width: 3rem;
+  width: 3rem;
+  cursor: pointer;
 }

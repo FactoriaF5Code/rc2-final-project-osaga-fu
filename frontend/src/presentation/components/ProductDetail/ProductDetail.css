@@ -1,4 +1,4 @@
-.detail-bg{
+.detail-bg, .loading{
   padding: 3rem 0 15rem 0;
   background: linear-gradient(
     0deg,
@@ -53,10 +53,17 @@
   text-align: justify;
 }
 
+.detail-size{
+  font-size: 1.8rem;
+  font-weight: 200;
+  text-align: right;
+}
+
 .detail-price {
   font-size: 3rem;
   font-weight: 400;
   text-align: right;
+  padding-top: 1rem;
 }
 
 .back-button {

@@ -23,8 +23,6 @@ export default function ProductDetail() {
     fetchProduct();
   }, [id]);
 
-  
-
   if (!product) {
     return <div className="loading"></div>;
   }
@@ -43,6 +41,7 @@ export default function ProductDetail() {
           <span>
             <h3 className="text-title">{product.name}</h3>
             <p className="text-description">{product.description}</p>
+            <p className="detail-size">({product.size})</p>
             <h4 className="detail-price">{product.price}€</h4>
           </span>
           <button className="custom-button" onClick={handleCustomButtonClick}>
