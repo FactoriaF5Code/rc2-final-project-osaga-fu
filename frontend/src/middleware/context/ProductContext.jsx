@@ -1,10 +1,10 @@
 import { ProductService } from "../../services/ProductService";
+import { CartService } from "../../services/CartService";
 import { createContext, useState } from "react";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-
   const [showModal, setShowModal] = useState(false);
   const [cartItems, setCartItems] = useState(0);
 
@@ -26,9 +26,15 @@ export const ProductProvider = ({ children }) => {
     setShowModal(false);
   }
 
-  const addToCart = () => {
-    setCartItems(cartItems+1);
-  }
+  const addToCart = async (formData) => {
+    try {
+      const cartService = new CartService();
+      await cartService.addToCart(formData);
+      setCartItems(cartItems + 1);
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
 
   const cartProducts = () => cartItems;
 
@@ -40,8 +46,7 @@ export const ProductProvider = ({ children }) => {
     showModal,
     setShowModal,
     addToCart,
-    cartProducts
-  
+    cartProducts,
   };
 
   return (
