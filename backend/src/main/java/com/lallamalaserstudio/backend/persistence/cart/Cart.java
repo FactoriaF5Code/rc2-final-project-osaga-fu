@@ -1,8 +1,9 @@
-package com.lallamalaserstudio.backend.persistence;
+package com.lallamalaserstudio.backend.persistence.cart;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lallamalaserstudio.backend.persistence.tag.Tag;
 import jakarta.persistence.*;
 
 @Entity

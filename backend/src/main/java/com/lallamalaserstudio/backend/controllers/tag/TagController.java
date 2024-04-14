@@ -1,4 +1,4 @@
-package com.lallamalaserstudio.backend.controllers;
+package com.lallamalaserstudio.backend.controllers.tag;
 
 import java.util.List;
 

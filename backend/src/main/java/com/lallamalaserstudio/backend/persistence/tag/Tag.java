@@ -1,5 +1,6 @@
-package com.lallamalaserstudio.backend.persistence;
+package com.lallamalaserstudio.backend.persistence.tag;
 
+import com.lallamalaserstudio.backend.persistence.cart.Cart;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,7 +17,7 @@ public class Tag {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_cart")
     private Cart cart;
 
     public Tag(Long id, String name, Double price, String size, String photoUrl, String description, Cart cart) {

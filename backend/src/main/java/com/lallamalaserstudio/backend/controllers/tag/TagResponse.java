@@ -1,6 +1,6 @@
-package com.lallamalaserstudio.backend.controllers;
+package com.lallamalaserstudio.backend.controllers.tag;
 
-import com.lallamalaserstudio.backend.persistence.Tag;
+import com.lallamalaserstudio.backend.persistence.tag.Tag;
 
 public class TagResponse {
 

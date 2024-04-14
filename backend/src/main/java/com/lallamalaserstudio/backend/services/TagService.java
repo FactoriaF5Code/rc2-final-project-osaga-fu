@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lallamalaserstudio.backend.controllers.TagResponse;
-import com.lallamalaserstudio.backend.persistence.TagRepository;
+import com.lallamalaserstudio.backend.controllers.tag.TagResponse;
+import com.lallamalaserstudio.backend.persistence.tag.TagRepository;
 
 @Service
 public class TagService {
