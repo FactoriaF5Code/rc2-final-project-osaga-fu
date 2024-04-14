@@ -54,5 +54,21 @@ public class CartService {
         cartRepository.deleteById(cartId);
     }
 
+    public void updateCart(Long cartId, CartRequest cartRequest) {
+        Cart existingCart = cartRepository.findById(cartId)
+                .orElseThrow(() -> new RuntimeException("Cart with ID " + cartId + " not found"));
+
+        Tag tag = tagRepository.findById(cartRequest.getTagId())
+                .orElseThrow(() -> new RuntimeException("Tag with ID " + cartRequest.getTagId() + " not found"));
+
+        existingCart.setTag(tag);
+        existingCart.setQuantity(cartRequest.getQuantity());
+        existingCart.setText(cartRequest.getText());
+        existingCart.setColor(cartRequest.getColor());
+        existingCart.setTypography(cartRequest.getTypography());
+
+        cartRepository.save(existingCart);
+    }
+
 
 }
