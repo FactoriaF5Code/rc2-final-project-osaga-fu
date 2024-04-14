@@ -3,6 +3,7 @@ package com.lallamalaserstudio.backend.controllers.cart;
 import com.lallamalaserstudio.backend.persistence.cart.Cart;
 import com.lallamalaserstudio.backend.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,5 +27,11 @@ public class CartController {
     @PostMapping
     public CartResponse add(@RequestBody CartRequest cartRequest) {
         return cartService.addCart(cartRequest);
+    }
+
+    @DeleteMapping("/{cartId}")
+    public ResponseEntity<String> delete(@PathVariable Long cartId) {
+        cartService.deleteCart(cartId);
+        return ResponseEntity.ok("Cart with ID " + cartId + " has been deleted successfully") ;
     }
 }
