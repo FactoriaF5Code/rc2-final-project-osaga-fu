@@ -35,15 +35,7 @@ public class CartService {
         }
 
         Cart cart = new Cart();
-        cart.setTag(tag);
-        cart.setQuantity(cartRequest.getQuantity());
-        cart.setText(cartRequest.getText());
-        cart.setColor(cartRequest.getColor());
-        cart.setTypography(cartRequest.getTypography());
-
-        Cart savedCart = cartRepository.save(cart);
-
-        return CartResponse.fromCart(savedCart);
+        return getCartResponse(cartRequest, cart, tag);
 
     }
 
@@ -54,20 +46,26 @@ public class CartService {
         cartRepository.deleteById(cartId);
     }
 
-    public void updateCart(Long cartId, CartRequest cartRequest) {
+    public CartResponse updateCart(Long cartId, CartRequest cartRequest) {
         Cart existingCart = cartRepository.findById(cartId)
                 .orElseThrow(() -> new RuntimeException("Cart with ID " + cartId + " not found"));
 
         Tag tag = tagRepository.findById(cartRequest.getTagId())
                 .orElseThrow(() -> new RuntimeException("Tag with ID " + cartRequest.getTagId() + " not found"));
 
+        return getCartResponse(cartRequest, existingCart, tag);
+    }
+
+    private CartResponse getCartResponse(CartRequest cartRequest, Cart existingCart, Tag tag) {
         existingCart.setTag(tag);
         existingCart.setQuantity(cartRequest.getQuantity());
         existingCart.setText(cartRequest.getText());
         existingCart.setColor(cartRequest.getColor());
         existingCart.setTypography(cartRequest.getTypography());
 
-        cartRepository.save(existingCart);
+        Cart updatedCart = cartRepository.save(existingCart);
+
+        return CartResponse.fromCart(updatedCart);
     }
 
 

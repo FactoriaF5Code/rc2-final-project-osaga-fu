@@ -36,8 +36,7 @@ public class CartController {
     }
 
     @PutMapping("/{cartId}")
-    public ResponseEntity<String> update(@PathVariable Long cartId, @RequestBody CartRequest cartRequest) {
-        cartService.updateCart(cartId, cartRequest);
-        return ResponseEntity.ok("Cart with ID " + cartId + " has been updated successfully");
+    public CartResponse update(@PathVariable Long cartId, @RequestBody CartRequest cartRequest) {
+        return cartService.updateCart(cartId, cartRequest);
     }
 }
