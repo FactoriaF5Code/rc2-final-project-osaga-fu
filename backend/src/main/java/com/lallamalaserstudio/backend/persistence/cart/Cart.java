@@ -17,6 +17,7 @@ public class Cart {
     @OneToMany(mappedBy = "cart")
     private List<Tag> tag;
 
+    private Integer quantity;
     private String text;
     private String color;
     private String typography;
