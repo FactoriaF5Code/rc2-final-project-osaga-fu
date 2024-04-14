@@ -4,6 +4,8 @@ import com.lallamalaserstudio.backend.controllers.cart.CartRequest;
 import com.lallamalaserstudio.backend.controllers.cart.CartResponse;
 import com.lallamalaserstudio.backend.persistence.cart.Cart;
 import com.lallamalaserstudio.backend.persistence.cart.CartRepository;
+import com.lallamalaserstudio.backend.persistence.tag.Tag;
+import com.lallamalaserstudio.backend.persistence.tag.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +16,11 @@ import java.util.stream.Collectors;
 public class CartService {
 
     private final CartRepository cartRepository;
+    private final TagRepository tagRepository;
 
-    public CartService(@Autowired CartRepository cartRepository) {
+    public CartService(@Autowired CartRepository cartRepository, TagRepository tagRepository) {
         this.cartRepository = cartRepository;
+        this.tagRepository = tagRepository;
     }
 
     public List<CartResponse> getAllCarts() {
@@ -24,9 +28,22 @@ public class CartService {
     }
 
     public CartResponse addCart(CartRequest cartRequest) {
-        Cart cart = new Cart(cartRequest.getCartId(),cartRequest.getQuantity(), cartRequest.getText(), cartRequest.getColor(), cartRequest.getTypography());
+        Tag tag = tagRepository.findById(cartRequest.getTagId()).orElse(null);
+
+        if (tag == null) {
+            throw new RuntimeException("Tag with ID " + cartRequest.getTagId() + " not found");
+        }
+
+        Cart cart = new Cart();
+        cart.setTag(tag);
+        cart.setQuantity(cartRequest.getQuantity());
+        cart.setText(cartRequest.getText());
+        cart.setColor(cartRequest.getColor());
+        cart.setTypography(cartRequest.getTypography());
+
         Cart savedCart = cartRepository.save(cart);
-        return new CartResponse(savedCart.getId(), savedCart.getQuantity(), savedCart.getText(), savedCart.getColor(), savedCart.getTypography());
+
+        return CartResponse.fromCart(savedCart);
 
     }
 

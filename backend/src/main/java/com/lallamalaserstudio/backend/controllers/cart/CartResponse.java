@@ -9,13 +9,18 @@ public class CartResponse {
     private String text;
     private String color;
     private String typography;
+    private Long tagId;
+    private String tagName;
 
-    public CartResponse(Long id, Integer quantity, String text, String color, String typography) {
+
+    public CartResponse(Long id, Integer quantity, String text, String color, String typography, Long tagId, String tagName) {
         this.id = id;
         this.quantity = quantity;
         this.text = text;
         this.color = color;
         this.typography = typography;
+        this.tagId = tagId;
+        this.tagName = tagName;
     }
 
 
@@ -60,6 +65,22 @@ public class CartResponse {
     }
 
     public static CartResponse fromCart(Cart cart) {
-        return new CartResponse(cart.getId(), cart.getQuantity(), cart.getText(), cart.getColor(), cart.getTypography());
+        return new CartResponse(cart.getId(), cart.getQuantity(), cart.getText(), cart.getColor(), cart.getTypography(), cart.getTag().getId(), cart.getTag().getName());
+    }
+
+    public Long getTagId() {
+        return tagId;
+    }
+
+    public void setTagId(Long tagId) {
+        this.tagId = tagId;
+    }
+
+    public String getTagName() {
+        return tagName;
+    }
+
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
     }
 }

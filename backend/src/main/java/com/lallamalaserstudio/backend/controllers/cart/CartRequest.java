@@ -2,18 +2,18 @@ package com.lallamalaserstudio.backend.controllers.cart;
 
 public class CartRequest {
 
-    private Long cartId;
+    private Long tagId;
     private String text;
     private String color;
     private String typography;
     private Integer quantity;
 
-    public CartRequest(Long cartId,String text, String color, String typography, Integer quantity) {
+    public CartRequest(String text, String color, String typography, Integer quantity, Long tagId) {
         this.text = text;
         this.color = color;
         this.typography = typography;
         this.quantity = quantity;
-        this.cartId = cartId;
+        this.tagId = tagId;
     }
 
     public String getText() {
@@ -48,11 +48,12 @@ public class CartRequest {
         this.typography = typography;
     }
 
-    public Long getCartId() {
-        return cartId;
+
+    public Long getTagId() {
+        return tagId;
     }
 
-    public void setCartId(Long cartId) {
-        this.cartId = cartId;
+    public void setTagId(Long tagId) {
+        this.tagId = tagId;
     }
 }
