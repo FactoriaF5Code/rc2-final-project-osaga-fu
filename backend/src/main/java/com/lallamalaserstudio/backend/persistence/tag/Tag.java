@@ -3,7 +3,6 @@ package com.lallamalaserstudio.backend.persistence.tag;
 import com.lallamalaserstudio.backend.persistence.cart.Cart;
 import jakarta.persistence.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @Entity

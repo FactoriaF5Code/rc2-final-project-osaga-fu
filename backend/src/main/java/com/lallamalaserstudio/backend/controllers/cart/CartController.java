@@ -12,8 +12,11 @@ import java.util.List;
 @CrossOrigin("http://localhost:5173")
 public class CartController {
 
-    @Autowired
-    private CartService cartService;
+    private final CartService cartService;
+
+    public CartController(@Autowired CartService cartService) {
+        this.cartService = cartService;
+    }
 
     @GetMapping
     public List<CartResponse> getAll() {
