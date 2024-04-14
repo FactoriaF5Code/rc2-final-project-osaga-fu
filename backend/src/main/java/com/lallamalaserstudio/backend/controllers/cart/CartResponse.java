@@ -1,5 +1,7 @@
 package com.lallamalaserstudio.backend.controllers.cart;
 
+import com.lallamalaserstudio.backend.persistence.cart.Cart;
+
 public class CartResponse {
 
     private Long id;
@@ -55,5 +57,9 @@ public class CartResponse {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public static CartResponse fromCart(Cart cart) {
+        return new CartResponse(cart.getId(), cart.getQuantity(), cart.getText(), cart.getColor(), cart.getTypography());
     }
 }
