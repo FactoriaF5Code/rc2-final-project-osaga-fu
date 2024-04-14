@@ -18,13 +18,11 @@ public class CartService {
         this.cartRepository = cartRepository;
     }
 
-    public void addCart(Cart cart) {}
-
-    public void removeCart(Cart cart) {}
-
     public List<CartResponse> getAllCarts() {
         return cartRepository.findAll().stream().map(CartResponse::fromCart).collect(Collectors.toList());
     }
 
-
+    public CartResponse addCart(Cart cart) {
+        return CartResponse.fromCart(cartRepository.save(cart));
+    }
 }
