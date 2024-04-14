@@ -21,7 +21,7 @@ public class CartController {
     }
 
     @PostMapping
-    public CartResponse add(@RequestBody Cart cart) {
-        return cartService.addCart(cart);
+    public CartResponse add(@RequestBody CartRequest cartRequest) {
+        return cartService.addCart(cartRequest);
     }
 }

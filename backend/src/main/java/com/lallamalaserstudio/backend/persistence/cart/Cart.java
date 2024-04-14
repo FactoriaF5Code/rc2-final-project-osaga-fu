@@ -14,8 +14,9 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "cart")
-    private List<Tag> tag;
+    @ManyToOne
+    @JoinColumn(name = "id_tag")
+    private Tag tag;
 
     private Integer quantity;
     private String text;
@@ -28,7 +29,6 @@ public class Cart {
         this.text = text;
         this.color = color;
         this.typography = typography;
-        this.tag = new ArrayList<Tag>();
     }
 
     public Cart(){}
@@ -39,14 +39,6 @@ public class Cart {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<Tag> getTag() {
-        return tag;
-    }
-
-    public void setTag(List<Tag> tag) {
-        this.tag = tag;
     }
 
     public String getText() {
@@ -79,5 +71,13 @@ public class Cart {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Tag getTag() {
+        return tag;
+    }
+
+    public void setTag(Tag tag) {
+        this.tag = tag;
     }
 }

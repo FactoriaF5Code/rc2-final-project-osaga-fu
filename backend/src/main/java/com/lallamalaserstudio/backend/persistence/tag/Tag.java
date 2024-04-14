@@ -3,6 +3,9 @@ package com.lallamalaserstudio.backend.persistence.tag;
 import com.lallamalaserstudio.backend.persistence.cart.Cart;
 import jakarta.persistence.*;
 
+import java.util.Collections;
+import java.util.List;
+
 @Entity
 @Table(name = "tags")
 public class Tag {
@@ -16,18 +19,17 @@ public class Tag {
     private String photoUrl;
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "id_cart")
-    private Cart cart;
+    @OneToMany(mappedBy = "id")
+    private List<Cart> carts;
 
-    public Tag(Long id, String name, Double price, String size, String photoUrl, String description, Cart cart) {
+    public Tag(Long id, String name, Double price, String size, String photoUrl, String description, List<Cart> carts) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.size = size;
         this.photoUrl = photoUrl;
         this.description = description;
-        this.cart = cart;
+        this.carts = carts;
     }
 
     public Tag() {
@@ -81,11 +83,12 @@ public class Tag {
         this.description = description;
     }
 
-    public Cart getCart() {
-        return cart;
+
+    public List<Cart> getCarts() {
+        return carts;
     }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
+    public void setCarts(List<Cart> carts) {
+        this.carts = carts;
     }
 }

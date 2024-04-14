@@ -1,5 +1,6 @@
 package com.lallamalaserstudio.backend.services;
 
+import com.lallamalaserstudio.backend.controllers.cart.CartRequest;
 import com.lallamalaserstudio.backend.controllers.cart.CartResponse;
 import com.lallamalaserstudio.backend.persistence.cart.Cart;
 import com.lallamalaserstudio.backend.persistence.cart.CartRepository;
@@ -22,7 +23,12 @@ public class CartService {
         return cartRepository.findAll().stream().map(CartResponse::fromCart).collect(Collectors.toList());
     }
 
-    public CartResponse addCart(Cart cart) {
-        return CartResponse.fromCart(cartRepository.save(cart));
+    public CartResponse addCart(CartRequest cartRequest) {
+        Cart cart = new Cart(cartRequest.getCartId(),cartRequest.getQuantity(), cartRequest.getText(), cartRequest.getColor(), cartRequest.getTypography());
+        Cart savedCart = cartRepository.save(cart);
+        return new CartResponse(savedCart.getId(), savedCart.getQuantity(), savedCart.getText(), savedCart.getColor(), savedCart.getTypography());
+
     }
+
+
 }
