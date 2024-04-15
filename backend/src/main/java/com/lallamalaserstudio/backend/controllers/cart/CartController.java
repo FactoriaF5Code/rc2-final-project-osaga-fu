@@ -1,6 +1,5 @@
 package com.lallamalaserstudio.backend.controllers.cart;
 
-import com.lallamalaserstudio.backend.persistence.cart.Cart;
 import com.lallamalaserstudio.backend.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
