@@ -39,7 +39,6 @@ export default function CustomModal() {
     } catch (error) {
       setMessage("Error adding item to cart. Please try again later.");
     }
-    // closeModal();
   };
 
   return (

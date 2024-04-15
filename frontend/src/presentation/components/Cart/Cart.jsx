@@ -1,13 +1,20 @@
 import "./Cart.css";
 import { useCart } from "../../../middleware/context/CartContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ModifyModal from "../ModifyModal/ModifyModal";
 
 export default function Cart() {
   const { cart, fetchCart, deleteCart } = useCart();
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleDelete = (cartId) => {
     deleteCart(cartId);
+  };
+
+  const handleModify = () => {
+    setShowModal(true);
   };
 
   useEffect(() => {
@@ -46,7 +53,9 @@ export default function Cart() {
                 <div>{cart.tagPrice}€</div>
               </span>
               <div className="right-section-card">
-                <button className="modify-button">Modify</button>
+                <button className="modify-button" onClick={handleModify}>
+                  Modify
+                </button>
                 <button
                   className="delete-button"
                   onClick={() => handleDelete(cart.id)}
@@ -58,6 +67,7 @@ export default function Cart() {
           ))}
         </section>
       </section>
+      {showModal && <ModifyModal />}
     </main>
   );
 }
