@@ -5,6 +5,8 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
   const cartService = new CartService();
 
   const fetchCart = async () => {
@@ -47,9 +49,26 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, fetchCart, addToCart, updateCart, deleteCart }}
+      value={{
+        cart,
+        fetchCart,
+        addToCart,
+        updateCart,
+        deleteCart,
+        openModal,
+        closeModal,
+        showModal
+      }}
     >
       {children}
     </CartContext.Provider>

@@ -1,7 +1,9 @@
 import "./ModifyModal.css";
-import { useState } from "react";
+import { useCart } from "../../../middleware/context/CartContext";
 
 export default function ModifyModal() {
+  const { showModal, closeModal } = useCart();
+
   return (
     <div className="modal-container">
       <div className="modal-content">
@@ -24,8 +26,16 @@ export default function ModifyModal() {
             <option value="Machine Type">Machine Type</option>
           </select>
           <div className="button-container">
-            <button className="modify-button">Save</button>
-            <button className="delete-button">Cancel</button>
+            <button className="modify-button" type="button">
+              Save
+            </button>
+            <button
+              className="delete-button"
+              tyupe="button"
+              onClick={closeModal}
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>

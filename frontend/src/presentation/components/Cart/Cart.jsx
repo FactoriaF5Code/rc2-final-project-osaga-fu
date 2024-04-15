@@ -5,16 +5,14 @@ import { Link } from "react-router-dom";
 import ModifyModal from "../ModifyModal/ModifyModal";
 
 export default function Cart() {
-  const { cart, fetchCart, deleteCart } = useCart();
-
-  const [showModal, setShowModal] = useState(false);
+  const { cart, fetchCart, deleteCart, openModal, showModal } = useCart();
 
   const handleDelete = (cartId) => {
     deleteCart(cartId);
   };
 
   const handleModify = () => {
-    setShowModal(true);
+    openModal();
   };
 
   useEffect(() => {
