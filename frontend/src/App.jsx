@@ -1,12 +1,15 @@
 import "./App.css";
+import { CartProvider } from "./middleware/context/CartContext";
 import { ProductProvider } from "./middleware/context/ProductContext";
 import AppRouter from "./middleware/router/AppRouter";
 
 function App() {
   return (
-    <ProductProvider>
-      <AppRouter />
-    </ProductProvider>
+    <CartProvider>
+      <ProductProvider>
+        <AppRouter />
+      </ProductProvider>
+    </CartProvider>
   );
 }
 

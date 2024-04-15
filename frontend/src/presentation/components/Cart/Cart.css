@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 5rem;
 }
 
 .cart-image-container {
@@ -29,10 +30,9 @@
 .cart-text {
   height: 20rem;
   width: 20rem;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -50,14 +50,14 @@
   height: 20rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .right-section-card h5 {
   font-size: 1.8rem;
   font-weight: 200;
-  padding-top: 1rem;
+  margin-top: 2rem;
 }
 
 .right-section-card div {
@@ -70,6 +70,7 @@
   border: solid black 1px;
   border-radius: 0.7rem;
   background-color: white;
+  margin-bottom: 2rem;
 }
 
 .modify-button {
@@ -84,6 +85,11 @@
   cursor: pointer;
   margin: 1rem auto;
   border: solid 1px black;
+  transition: transform 0.5s 0.1s ease-in-out;
+}
+
+.modify-button:hover {
+  transform: scale(1.1);
 }
 
 .delete-button {
@@ -96,5 +102,9 @@
   height: 3.5rem;
   border-radius: 0.7rem;
   cursor: pointer;
-  margin-top: 2rem;
+  transition: transform 0.5s 0.1s ease-in-out;
+}
+
+.delete-button:hover {
+  transform: scale(1.1);
 }
