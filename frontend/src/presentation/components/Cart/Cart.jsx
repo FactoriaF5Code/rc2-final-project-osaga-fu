@@ -15,6 +15,7 @@ export default function Cart() {
       <section className="list-container">
         <h3 className="list-title">Cart</h3>
         <section className="cart-wrapper">
+          {cart.length == 0 && <h4 className="no-elements">No hay elementos en la cesta</h4>}
           {cart.map((cart) => (
             <article key={cart.id}>
               <div className="cart-image-container">
