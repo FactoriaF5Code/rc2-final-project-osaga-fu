@@ -9,12 +9,14 @@ export default function CartBar() {
 
   return (
     <section className="cart-bar">
-      <Link to="/cart">
-        <img className="cart-logo" src={Cart} alt="Cart logo" />
-      </Link>
-      {cartProducts() > 0 && (
-        <span className="cart-counter" >{cartProducts()}</span>
-      )}
+      <div>
+        <Link to="/cart">
+          <img className="cart-logo" src={Cart} alt="Cart logo" />
+        </Link>
+        {cartProducts() > 0 && (
+          <span className="cart-counter">{cartProducts()}</span>
+        )}
+      </div>
     </section>
   );
 }

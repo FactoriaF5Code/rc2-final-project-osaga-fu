@@ -8,6 +8,13 @@
   gap: 1rem;
 }
 
+.cart-bar div {
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .cart-logo {
   width: 3rem;
   cursor: pointer;
@@ -26,4 +33,32 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1350px) {
+  .cart-bar {
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .cart-logo {
+    width: 2rem;
+  }
+
+  .cart-counter {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .cart-bar {
+    height: 4rem;
+  }
+
+  .cart-bar div {
+    gap: 0.7rem;
+    padding-top: 0.5rem;
+  }
 }
