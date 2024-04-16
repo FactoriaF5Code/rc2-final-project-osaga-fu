@@ -21,3 +21,50 @@
   padding-left: 83rem;
   padding-top: 19vh;
 }
+
+@media only screen and (max-width: 1450px) {
+  .banner-container {
+    height: 40rem;
+  }
+
+  .banner-text {
+    padding-left: 63rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .banner-container {
+    height: 30rem;
+  }
+
+  .banner-text {
+    padding-left: 43rem;
+    padding-top: 14rem;
+    font-size: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .banner-container {
+    height: 20rem;
+  }
+
+  .banner-text {
+    padding-left: 33rem;
+    padding-top: 8rem;
+    font-size: 2rem;
+  }
+}
+
+
+@media only screen and (max-width: 400px){
+  .banner-container {
+    height: 20rem;
+  }
+
+  .banner-text {
+    padding-left: 0;
+    padding-top: 10rem;
+    font-size: 2.2rem;
+  }
+}
