@@ -16,8 +16,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.Arrays;
 import java.util.List;
 
-import static org.mockito.Mockito.when;
-
 @SpringBootTest
 @AutoConfigureMockMvc
 public class TagControllerTest {
@@ -53,5 +51,22 @@ public class TagControllerTest {
                 .andExpect(jsonPath("$[1].photoUrl").value("photo2"))
                 .andExpect(jsonPath("$[1].description").value("description2"));
 
+    }
+
+    @Test
+    public void testGetTagById() throws Exception {
+
+        TagResponse tag1 = new TagResponse(1L, "Focus Star", "11x11cm", 7.0, "photo", "description");
+
+        when(tagService.getTagById(tag1.getId())).thenReturn(tag1);
+
+        mockMvc.perform(get("/api/products/{id}", tag1.getId()))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json"))
+                .andExpect(jsonPath("$.name").value("Focus Star"))
+                .andExpect(jsonPath("$.size").value("11x11cm"))
+                .andExpect(jsonPath("$.price").value(7.0))
+                .andExpect(jsonPath("$.photoUrl").value("photo"))
+                .andExpect(jsonPath("$.description").value("description"));
     }
 }
