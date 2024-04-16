@@ -25,7 +25,8 @@
   font-size: 6rem;
   font-weight: 200;
   align-self: flex-start;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oll, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oll, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .products-wrapper {
@@ -44,7 +45,7 @@
 }
 
 .product-image-container {
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   overflow: hidden;
   height: 30rem;
   box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.151);
@@ -73,4 +74,43 @@
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1;
+}
+
+@media only screen and (max-width: 1350px) {
+  .list-container {
+    width: 100%;
+    border-radius: 0px;
+  }
+  .products-wrapper {
+    width: 100%;
+    gap: 3rem 8rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .products-wrapper {
+    gap: 3rem 6rem;
+  }
+
+  .list-title {
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .list-title {
+    font-size: 4rem;
+    align-self: center;
+  }
+
+  .info-title {
+    font-size: 2.1rem;
+  }
+
+  .info-price {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
 }
