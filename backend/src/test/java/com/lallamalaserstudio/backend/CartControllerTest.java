@@ -1,7 +1,6 @@
 package com.lallamalaserstudio.backend;
 
 import com.lallamalaserstudio.backend.controllers.cart.CartResponse;
-import com.lallamalaserstudio.backend.persistence.cart.CartRepository;
 import com.lallamalaserstudio.backend.services.CartService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +54,6 @@ public class CartControllerTest {
                 .andExpect(jsonPath("$[1].tagId").value(2))
                 .andExpect(jsonPath("$[1].tagPrice").value(1.8))
                 .andExpect(jsonPath("$[1].photoUrl").value("photo2"));
-
 
     }
 }
