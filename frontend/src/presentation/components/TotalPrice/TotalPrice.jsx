@@ -14,7 +14,7 @@ export default function TotalPrice() {
     <section className="total-price-wrapper">
       <article className="total-price-container">
         <h5>Total Price:</h5>
-        <div>{totalPrice} €</div>
+        <h4>{totalPrice} €</h4>
       </article>
     </section>
   );
