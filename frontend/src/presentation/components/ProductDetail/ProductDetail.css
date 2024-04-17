@@ -1,4 +1,5 @@
-.detail-bg, .loading{
+.detail-bg,
+.loading {
   padding: 3rem 0 15rem 0;
   background: linear-gradient(
     0deg,
@@ -21,12 +22,12 @@
   width: 40rem;
   height: 40rem;
   overflow: hidden;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.151);
 }
 
 .detail-photo {
-  height: 40rem;
+  height: 100%;
   transition: transform 2.2s 0.1s ease-in-out;
 }
 
@@ -53,7 +54,7 @@
   text-align: justify;
 }
 
-.detail-size{
+.detail-size {
   font-size: 1.8rem;
   font-weight: 200;
   text-align: right;
@@ -74,7 +75,7 @@
   color: #fff;
   width: 10rem;
   height: 3.5rem;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -96,7 +97,7 @@
   border: solid 1px #000;
   width: 10rem;
   height: 3.5rem;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   cursor: pointer;
   position: absolute;
   bottom: 6rem;
@@ -111,4 +112,44 @@
 
 .loading {
   height: 70vh;
+}
+
+@media only screen and (max-width: 1050px) {
+  .detail-container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .photo-container {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .text-title {
+    font-size: 4rem;
+  }
+
+  .text-description {
+    font-size: 1.8rem;
+  }
+
+  .detail-info {
+    width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .detail-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .text-title {
+    font-size: 3rem;
+  }
+  .detail-info {
+    height: 30rem;
+  }
 }
