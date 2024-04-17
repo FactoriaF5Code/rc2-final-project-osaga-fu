@@ -27,18 +27,6 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const updateCart = async (cartId, cartData) => {
-    try {
-      const updatedCart = await cartService.updateCart(cartId, cartData);
-      const updatedCartList = cart.map((item) =>
-        item.id === cartId ? updatedCart : item
-      );
-      setCart(updatedCartList);
-    } catch (error) {
-      console.error("Error updating cart:", error);
-    }
-  };
-
   const deleteCart = async (cartId) => {
     try {
       await cartService.deleteCart(cartId);
@@ -49,25 +37,13 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
   return (
     <CartContext.Provider
       value={{
         cart,
         fetchCart,
         addToCart,
-        updateCart,
         deleteCart,
-        openModal,
-        closeModal,
-        showModal
       }}
     >
       {children}

@@ -1,18 +1,13 @@
 import "./Cart.css";
 import { useCart } from "../../../middleware/context/CartContext";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import ModifyModal from "../ModifyModal/ModifyModal";
 
 export default function Cart() {
-  const { cart, fetchCart, deleteCart, openModal, showModal } = useCart();
+  const { cart, fetchCart, deleteCart } = useCart();
 
   const handleDelete = (cartId) => {
     deleteCart(cartId);
-  };
-
-  const handleModify = () => {
-    openModal();
   };
 
   useEffect(() => {
@@ -56,16 +51,10 @@ export default function Cart() {
                   Delete
                 </button>
               </span>
-              {/* <div className="right-section-card">
-                <button className="modify-button" onClick={handleModify}>
-                  Modify
-                </button>
-              </div> */}
             </article>
           ))}
         </section>
       </section>
-      {showModal && <ModifyModal />}
     </main>
   );
 }
