@@ -13,13 +13,13 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 import java.util.Arrays;
 import java.util.List;
 
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
@@ -89,5 +89,16 @@ public class CartControllerTest {
                 .andExpect(jsonPath("$.tagId").value(1))
                 .andExpect(jsonPath("$.tagPrice").value(7.0))
                 .andExpect(jsonPath("$.photoUrl").value("photo"));
+    }
+
+    @Test
+    public void testDeleteCart() throws Exception {
+        Long cartId = 1L;
+
+        mvc.perform(delete("/api/cart/{cartId}", cartId))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Cart with ID " + cartId + " has been deleted successfully"));
+
+        verify(cartService).deleteCart(cartId);
     }
 }
