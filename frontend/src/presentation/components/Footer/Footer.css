@@ -1,6 +1,6 @@
 footer {
   background-color: var(--main-color);
-  padding: 1.5rem 20rem;
+  padding: 1.5rem auto;
   height: 20rem;
   display: flex;
   flex-direction: column;
@@ -19,10 +19,10 @@ hr {
   gap: 5rem;
 }
 
-.footer-contact-container{
- display: flex;
- align-items: center;
- gap: 1rem;
+.footer-contact-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer-contact-text {
@@ -30,6 +30,42 @@ hr {
   font-weight: 200;
 }
 
-.logo-footer{
-    width: 3rem;
+.logo-footer {
+  width: 3rem;
+}
+
+@media only screen and (max-width: 1350px) {
+  footer {
+    padding: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .footer-bottom h5 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  hr {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  footer .title-text{
+    font-size: 3rem;
+  }
+
+  footer .subtitle-text {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    height: 15rem;
+  }
+
+  footer .text-container {
+    width: 15rem;
+  }
 }
