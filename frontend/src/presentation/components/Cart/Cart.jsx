@@ -2,6 +2,7 @@ import "./Cart.css";
 import { useCart } from "../../../middleware/context/CartContext";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import TotalPrice from "../TotalPrice/TotalPrice";
 
 export default function Cart() {
   const { cart, fetchCart, deleteCart } = useCart();
@@ -23,37 +24,38 @@ export default function Cart() {
             <h4 className="no-elements">No hay elementos en la cesta</h4>
           )}
           {cart.map((cart) => (
-            <article key={cart.id}>
-              <Link to={`/products/${cart.tagId}`}>
-                <div className="cart-image-container">
-                  <img
-                    className="cart-image"
-                    src={cart.photoUrl}
-                    alt={cart.tagName}
-                  />
-                </div>
-              </Link>
-              <span className="cart-text">
-                <h5>{cart.tagName}</h5>
-                <h6>{cart.text}</h6>
-                <h6>{cart.color}</h6>
-                <h6>{cart.typography}</h6>
-              </span>
-              <span className="right-section-card">
-                <h5>Quantity</h5>
-                <div>{cart.quantity}</div>
-                <h5>Price</h5>
-                <div>{cart.tagPrice}€</div>
-                <button
-                  className="delete-button"
-                  onClick={() => handleDelete(cart.id)}
-                >
-                  Delete
-                </button>
-              </span>
-            </article>
+              <article key={cart.id}>
+                <Link to={`/products/${cart.tagId}`}>
+                  <div className="cart-image-container">
+                    <img
+                      className="cart-image"
+                      src={cart.photoUrl}
+                      alt={cart.tagName}
+                    />
+                  </div>
+                </Link>
+                <span className="cart-text">
+                  <h5>{cart.tagName}</h5>
+                  <h6>{cart.text}</h6>
+                  <h6>{cart.color}</h6>
+                  <h6>{cart.typography}</h6>
+                </span>
+                <span className="right-section-card">
+                  <h5>Quantity</h5>
+                  <div>{cart.quantity}</div>
+                  <h5>Price</h5>
+                  <div>{cart.tagPrice}€</div>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDelete(cart.id)}
+                  >
+                    Delete
+                  </button>
+                </span>
+              </article>
           ))}
         </section>
+        <TotalPrice />
       </section>
     </main>
   );
