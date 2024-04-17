@@ -20,7 +20,7 @@ export default function Cart() {
   }, []);
 
   return (
-    <main className="back-ground">
+    <main className="back-ground cart">
       <section className="list-container">
         <h3 className="list-title">Cart</h3>
         <section className="cart-wrapper">
@@ -49,18 +49,18 @@ export default function Cart() {
                 <div>{cart.quantity}</div>
                 <h5>Price</h5>
                 <div>{cart.tagPrice}€</div>
-              </span>
-              <div className="right-section-card">
-                <button className="modify-button" onClick={handleModify}>
-                  Modify
-                </button>
                 <button
                   className="delete-button"
                   onClick={() => handleDelete(cart.id)}
                 >
                   Delete
                 </button>
-              </div>
+              </span>
+              {/* <div className="right-section-card">
+                <button className="modify-button" onClick={handleModify}>
+                  Modify
+                </button>
+              </div> */}
             </article>
           ))}
         </section>
