@@ -5,6 +5,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const cartService = new CartService();
 
@@ -36,6 +37,14 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const calculateTotalPrice = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.tagPrice * item.quantity;
+    });
+    setTotalPrice(total.toFixed(2));
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -43,6 +52,9 @@ export const CartProvider = ({ children }) => {
         fetchCart,
         addToCart,
         deleteCart,
+        totalPrice,
+        setTotalPrice,
+        calculateTotalPrice,
       }}
     >
       {children}
