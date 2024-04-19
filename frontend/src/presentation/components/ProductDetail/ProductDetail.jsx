@@ -45,7 +45,7 @@ export default function ProductDetail() {
             <h4 className="detail-price">{product.price}€</h4>
           </span>
           <button className="custom-button" onClick={handleCustomButtonClick}>
-            Custom
+            Buy Now
           </button>
           <Link to="/">
             <button className="back-button">Back</button>

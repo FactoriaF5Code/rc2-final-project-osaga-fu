@@ -73,7 +73,7 @@
   letter-spacing: 0.5px;
   background-color: #000;
   color: #fff;
-  width: 10rem;
+  width: 12rem;
   height: 3.5rem;
   border-radius: 0.7rem;
   position: absolute;
@@ -95,7 +95,7 @@
   background-color: #fff;
   color: #000;
   border: solid 1px #000;
-  width: 10rem;
+  width: 12rem;
   height: 3.5rem;
   border-radius: 0.7rem;
   cursor: pointer;
