@@ -36,6 +36,10 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
+  const deleteProductFromCart = () => {
+    setCartItems(cartItems - 1);
+  } 
+
   const cartProducts = () => cartItems;
 
   const value = {
@@ -47,6 +51,7 @@ export const ProductProvider = ({ children }) => {
     setShowModal,
     addToCart,
     cartProducts,
+    deleteProductFromCart
   };
 
   return (

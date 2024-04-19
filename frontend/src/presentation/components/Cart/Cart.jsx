@@ -1,14 +1,17 @@
 import "./Cart.css";
 import { useCart } from "../../../middleware/context/CartContext";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import TotalPrice from "../TotalPrice/TotalPrice";
+import { ProductContext } from "../../../middleware/context/ProductContext";
 
 export default function Cart() {
   const { cart, fetchCart, deleteCart } = useCart();
+  const { deleteProductFromCart } = useContext(ProductContext);
 
   const handleDelete = (cartId) => {
     deleteCart(cartId);
+    deleteProductFromCart();
   };
 
   useEffect(() => {
