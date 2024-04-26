@@ -58,7 +58,7 @@ export default function Cart() {
               </article>
           ))}
         </section>
-        {cart.length ==! 0 && <TotalPrice />}
+        {cart.length > 0 && <TotalPrice />}
       </section>
     </main>
   );
